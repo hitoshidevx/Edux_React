@@ -2,7 +2,7 @@ import React from 'react';
 import Menu from '../../components/menu';
 import Rodape from '../../components/rodape';
 import logo from '../../assets/img/logo.png'
-import { Form, Container, Button, Col } from 'react-bootstrap'
+import { Form, Container, Button } from 'react-bootstrap'
 import './index.css'
 
 const Cadastrar = () => {
@@ -17,7 +17,6 @@ const Cadastrar = () => {
                     <br/>
                     <small>Informe os dados Abaixo</small>
                     <hr/>
-                    <Form>
                         <Form.Group controlId="formBasicEmail">
                             <Form.Label>Nome</Form.Label>
                             <Form.Control type="text" placeholder="Informe o nome completo" required />
@@ -33,20 +32,11 @@ const Cadastrar = () => {
                             <Form.Control type="password" placeholder="Informe a senha" required />
                         </Form.Group>
 
-                        <Form.Group as={Col} controlId="formGridState">
-                        <Form.Label>Sou..</Form.Label>
-                        <Form.Control as="select" defaultValue="Choose...">
-                            <option>Aluno</option>
-                            <option>Professor</option>
-                        </Form.Control>
-                        </Form.Group>
-
                         <Button variant="primary" type="submit">
                             Enviar
                         </Button>
                         <br/><br/>
                         <a href="/login" style={{marginTop: '30px'}}>Já tenho conta!</a>
-                    </Form>
                 </Form>
             </Container>
             <Rodape />
