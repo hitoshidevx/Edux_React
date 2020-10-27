@@ -13,7 +13,7 @@ const Home = () =>{
             <Carousel.Item>
                 <img
                 className="d-block w-100"
-                src="https://vaidebolsa.com.br/wp-content/uploads/2020/02/25vdb06-ead.jpg.webp"
+                src="https://media-exp1.licdn.com/dms/image/C561BAQF4ImXQA9JqnA/company-background_10000/0?e=2159024400&v=beta&t=VPAXeefZUSD53KAJICque7AHlm2feGnOs9jGdGNljKw"
                 alt="First slide"
                 />
                 <Carousel.Caption>
@@ -24,7 +24,7 @@ const Home = () =>{
             <Carousel.Item>
                 <img
                 className="d-block w-100"
-                src="https://www.estudiosite.com.br/img/post/guwY4XLiaw0O2rzP0tJm5b328bc3ad2de.jpg"
+                src="https://c0.wallpaperflare.com/preview/264/169/201/book-read-student-students.jpg"
                 alt="Third slide"
                 />
 
