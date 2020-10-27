@@ -12,7 +12,7 @@ const Cadastrar = () => {
             <Container className='form-height'>
                 <Form className='form-signin'>
                     <div className="text-center">
-                        <img src={logo} alt="Nyous" style={{width : "300px"}}/>
+                        <img src={logo} alt="Nyous" style={{width : "250px"}}/>
                     </div>
                     <br/>
                     <small>Informe os dados Abaixo</small>

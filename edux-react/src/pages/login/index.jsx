@@ -25,10 +25,23 @@ const Login = () =>{
         headers : {
             'content-type' : 'application/json'
 
-
+                                                                                                     
         }
         })
-        .then(response => console.log(response.json()));
+        .then(response => {
+            if(response.ok){
+                return response.json();
+            }
+
+            alert('Dados Inválidos');
+
+        })
+        .then(data => {
+            console.log(data);
+
+            localStorage.setItem('token-edux', data.token);
+        })
+        .then(err => console.log(err))
     } 
 
     return(
@@ -37,7 +50,7 @@ const Login = () =>{
             <Container className='form-height'>
                 <Form className='form-signin' onSubmit={event => logar(event)}>
                     <div className="text-center">
-                        <img src={logo} alt="Nyous" style={{width : "300px"}}/>
+                        <img src={logo} alt="Nyous" style={{width : "250px"}}/>
                     </div>
                     <br/>
                     <small>Informe os dados Abaixo</small>
