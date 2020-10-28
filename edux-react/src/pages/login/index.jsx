@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from "react-router-dom";
 import Menu from '../../components/menu';
 import Rodape from '../../components/rodape';
 import logo from '../../assets/img/logo.png'
@@ -6,6 +7,8 @@ import { Form, Container, Button } from 'react-bootstrap'
 import './index.css';
 
 const Login = () =>{
+
+    let history = useHistory();
 
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
@@ -40,6 +43,8 @@ const Login = () =>{
             console.log(data);
 
             localStorage.setItem('token-edux', data.token);
+
+            history.push("/inicio");
         })
         .then(err => console.log(err))
     } 
