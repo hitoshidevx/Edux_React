@@ -1,13 +1,13 @@
 import React from 'react';
-import logo from '../../assets/img/logo.png';
+import logobranco from '../../assets/img/logobranco.png';
 
 const Rodape = () =>{
 
     return(
 
-        <footer className="text-center" style={{marginTop : '150px', background : '#282828'}}>
+        <footer className="text-center" style={{marginTop : '150px', background : '#272c31'}}>
             <div className="text-center">
-                <img src={logo} alt="Nyous" style={{width : "100px"}}/>
+                <img src={logobranco} alt="Nyous" style={{width : "100px"}}/>
             </div>
             <small style={{color : 'white'}}>Desenvolvido por <strong>HTRAP</strong></small>
             

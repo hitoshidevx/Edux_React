@@ -3,7 +3,8 @@ import Menu from '../../components/menu';
 import Rodape from '../../components/rodape';
 import {Carousel, Jumbotron, Button, Card, Col, Row, Container} from 'react-bootstrap';
 
-const Home = () =>{
+
+const InicioAluno = () =>{
 
     return(
 
@@ -38,12 +39,11 @@ const Home = () =>{
                         <Card style={{ width: '18rem' }}>
                         <Card.Img variant="top" src="https://www.2em1consultoria.com.br/wp-content/uploads/2020/04/download.jpg" />
                             <Card.Body>
-                                <Card.Title>Diversão</Card.Title>
+                                <Card.Title>Ir para dicas</Card.Title>
                                 <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
+                                Verifique as dicas cadastradas pelo seu professor!
                                 </Card.Text>
-                                <Button variant="primary">Go somewhere</Button>
+                                <Button variant="primary" href='/dicas'>Bora!</Button>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -51,12 +51,11 @@ const Home = () =>{
                         <Card style={{ width: '18rem' }}>
                         <Card.Img variant="top" src="https://abmes.org.br/arquivos/noticias/insights08042020.png" />
                             <Card.Body>
-                                <Card.Title>Imersão</Card.Title>
+                                <Card.Title>Ir para objetivos</Card.Title>
                                 <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
+                                Verifique os objetivos cadastrados pelo seu professor.
                                 </Card.Text>
-                                <Button variant="primary">Go somewhere</Button>
+                                <Button variant="primary">Bora!</Button>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -64,12 +63,11 @@ const Home = () =>{
                         <Card style={{ width: '18rem' }}>
                         <Card.Img variant="top" src="https://www.cobranews.com.br/wp-content/uploads/2020/04/escola-1024x576.jpg" />
                             <Card.Body>
-                                <Card.Title>Inovação</Card.Title>
+                                <Card.Title>Ir para cursos</Card.Title>
                                 <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
+                                Verifique seus cursos.
                                 </Card.Text>
-                                <Button className="text-center" variant="primary">Go somewhere</Button>
+                                <Button className="text-center" variant="primary">Bora!</Button>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -82,4 +80,4 @@ const Home = () =>{
 
 }
 
-export default Home;
+export default InicioAluno;

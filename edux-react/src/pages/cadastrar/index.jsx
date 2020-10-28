@@ -7,9 +7,9 @@ import './index.css'
 
 const Cadastrar = () => {
     return(
-        <div>
+        <div className='cordefundo' style={{background : '#303A40'}}>
             <Menu />
-            <Container className='form-height'style={{marginTop : '120px'}}>
+            <Container className='form-height'style={{marginTop : '120px', borderRadius : '30px'}}>
                 <Form className='form-signin'>
                     <div className="text-center">
                         <img src={logo} alt="Nyous" style={{width : "250px"}}/>

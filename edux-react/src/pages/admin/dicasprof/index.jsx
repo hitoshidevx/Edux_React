@@ -1,11 +1,11 @@
 import React from 'react';
-import logo from '../../assets/img/logo.png';
-import Menu from '../../components/menu';
-import Rodape from '../../components/rodape';
+import logo from '../../../assets/img/logo.png';
+import Menu from '../../../components/menu';
+import Rodape from '../../../components/rodape';
 import { Form, Container, Button, Card, Row, Col } from 'react-bootstrap';
 
 //pure function Dicas
-const Dicas = () => {
+const DicasProf = () => {
     return(
 
         <div>
@@ -20,7 +20,7 @@ const Dicas = () => {
                     <br/>
 
                     <div className="text-center">
-                        <h3>Consulte suas dicas!</h3>
+                        <h3>Cadastre uma dica!</h3>
                     </div>
                     </Form>
             </Container>
@@ -77,4 +77,4 @@ const Dicas = () => {
     )
 }
 
-export default Dicas;
+export default DicasProf;
