@@ -18,7 +18,7 @@ const Login = () =>{
 
         console.log(`${email} - ${senha}`);
 
-        fetch('https://localhost:44355/api/login',{
+        fetch('https://localhost:5001/api/login',{
         method : 'POST',
         body : JSON.stringify({
             email : email,
@@ -52,7 +52,7 @@ const Login = () =>{
     return(
         <div>
             <Menu />
-            <Container className='form-height'>
+            <Container className='form-height'style={{marginTop : '100px'}}>
                 <Form className='form-signin' onSubmit={event => logar(event)}>
                     <div className="text-center">
                         <img src={logo} alt="Nyous" style={{width : "250px"}}/>

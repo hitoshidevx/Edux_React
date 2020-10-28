@@ -9,7 +9,7 @@ const Cadastrar = () => {
     return(
         <div>
             <Menu />
-            <Container className='form-height'>
+            <Container className='form-height'style={{marginTop : '120px'}}>
                 <Form className='form-signin'>
                     <div className="text-center">
                         <img src={logo} alt="Nyous" style={{width : "250px"}}/>

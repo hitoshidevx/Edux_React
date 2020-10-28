@@ -21,31 +21,6 @@ const Home = () =>{
                 <p>Edux possue funções práticas e auto-explicativas.</p>
                 </Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item>
-                <img
-                className="d-block w-100"
-                src="https://c0.wallpaperflare.com/preview/264/169/201/book-read-student-students.jpg"
-                alt="Third slide"
-                />
-
-                <Carousel.Caption>
-                <h3>Uma nova forma de estudar!</h3>
-                <p>O estudo nunca foi tão divertido :)</p>
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-                <img
-                className="d-block w-100"
-                src="https://www.catho.com.br/educacao/blog/wp-content/uploads/sites/2/2018/12/2018-12-24-como-funciona-o-ead-na-unicesumar.png"
-                alt="Third slide"
-                />
-
-                <Carousel.Caption>
-                <h3>Rede social + Escola? SIM!</h3>
-                <p>Edux junta as duas coisas em uma só. Maneiro, né?</p>
-                </Carousel.Caption>
-            </Carousel.Item>
-
             </Carousel>
             <Jumbotron className="text-center">
                 <h2>Estudar nunca foi tão divertido!!</h2>

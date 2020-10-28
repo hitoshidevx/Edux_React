@@ -5,11 +5,11 @@ const Rodape = () =>{
 
     return(
 
-        <footer className="text-center" style={{marginTop : '70px'}}>
+        <footer className="text-center" style={{marginTop : '150px', background : '#282828'}}>
             <div className="text-center">
                 <img src={logo} alt="Nyous" style={{width : "100px"}}/>
             </div>
-            <small>Desenvolvido por <strong>HTRAP</strong></small>
+            <small style={{color : 'white'}}>Desenvolvido por <strong>HTRAP</strong></small>
             
         </footer>
 
