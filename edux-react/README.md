@@ -1,4 +1,4 @@
-# Edux - React
+# Edux - React.
 
   Um pequeno e simples projeto acadêmico feito pela equipe de dev HTRAP a pedido dos docentes da escola SENAI de Informática. 
 
