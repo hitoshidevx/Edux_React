@@ -86,6 +86,8 @@ const Menu = () => {
                         <NavDropdown.Item href="/instituicoes">Instituições</NavDropdown.Item>
                         <NavDropdown.Divider />
                         <NavDropdown.Item href="/curso">Curso</NavDropdown.Item>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item href="/turma">Turmas</NavDropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
                 <Dropdown>
