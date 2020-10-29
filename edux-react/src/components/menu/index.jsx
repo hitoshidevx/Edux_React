@@ -33,7 +33,9 @@ const Menu = () => {
         return (
             <Nav>
 
-                <NavDropdown.Item href="/inicioprof">Início</NavDropdown.Item>
+                <NavDropdown.Item href="/inicioprof" style={{ color: '#00C2EE' }} variant="dark">
+                    <strong>Início</strong>
+                </NavDropdown.Item>
 
                 <Dropdown>
                     <Dropdown.Toggle style={{ color: '#00C2EE' }} variant="dark" id="dropdown-basic">
@@ -43,6 +45,11 @@ const Menu = () => {
                     <Dropdown.Menu>
                         <NavDropdown.Item href="/dicasprof">Dicas - Prof</NavDropdown.Item>
                         <NavDropdown.Divider />
+                        <NavDropdown.Item href="/categoriasprof">Categorias - Prof</NavDropdown.Item>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item href="/instituicoesprof">Instituições - Prof</NavDropdown.Item>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item href="/cursoprof"> - Prof</NavDropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
                 <Dropdown>
@@ -61,7 +68,10 @@ const Menu = () => {
     } else {
         return (
             <Nav>
-                <NavDropdown.Item href="/inicioaluno">Início</NavDropdown.Item>
+                
+                <NavDropdown.Item href="/inicioaluno" style={{ color: '#00C2EE' }} variant="dark">
+                    <strong>Início</strong>
+                </NavDropdown.Item>
 
                 <Dropdown>
                     <Dropdown.Toggle style={{ color: '#00C2EE' }} variant="dark" id="dropdown-basic">
@@ -71,6 +81,11 @@ const Menu = () => {
                     <Dropdown.Menu>
                         <NavDropdown.Item href="/dicas">Dicas</NavDropdown.Item>
                         <NavDropdown.Divider />
+                        <NavDropdown.Item href="/categorias">Categorias</NavDropdown.Item>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item href="/instituicoes">Instituições</NavDropdown.Item>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item href="/curso">Curso</NavDropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
                 <Dropdown>

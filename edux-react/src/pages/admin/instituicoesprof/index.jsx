@@ -3,13 +3,13 @@ import Menu from '../../../components/menu';
 import Rodape from '../../../components/rodape';
 import Titulo from '../../../components/titulo';
 
-const CategoriasProf = () => {
+const InstituicoesProf = () => {
 
     return(
 
         <div>
             <Menu />
-            <Titulo titulo="Categoria" chamada="Cadastre categorias para seus alunos" />
+            <Titulo titulo="Instituições" chamada="Cadastre instituições para seus alunos" />
             <Rodape />
         </div>
 
@@ -17,4 +17,4 @@ const CategoriasProf = () => {
 
 }
 
-export default CategoriasProf
+export default InstituicoesProf;

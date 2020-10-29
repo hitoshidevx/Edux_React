@@ -3,13 +3,13 @@ import Menu from '../../components/menu';
 import Rodape from '../../components/rodape';
 import Titulo from '../../components/titulo';
 
-const Categorias = () => {
+const Instituicoes = () => {
 
     return(
 
         <div>
             <Menu />
-            <Titulo titulo="Categoria" chamada="Consulte suas categorias" />
+            <Titulo titulo="Instituições" chamada="Consulte sua instituição" />
             <Rodape />
         </div>
 
@@ -17,4 +17,4 @@ const Categorias = () => {
 
 }
 
-export default Categorias
+export default Instituicoes;

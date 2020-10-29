@@ -9,9 +9,15 @@ import Dicas from './pages/dicas';
 import DicasProf from './pages/admin/dicasprof';
 import InicioAluno from './pages/inicioaluno';
 import InicioProf from './pages/admin/inicioprof';
+import CategoriaProf from './pages/admin/categoriasprof';
+import Categorias from './pages/categorias';
+import InstituicoesProf from './pages/admin/instituicoesprof';
+import Instituicoes from './pages/instituicoes';
+import CursoProf from './pages/admin/cursoprof';
+import Curso from './pages/curso';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import reportWebVitals from './reportWebVitals';
 
 const routing = (
@@ -24,6 +30,12 @@ const routing = (
         <Route path="/dicasprof" component={DicasProf}/>
         <Route path="/inicioaluno" component={InicioAluno}/>
         <Route path="/inicioprof" component={InicioProf}/>
+        <Route path="/categoriasprof" component={CategoriaProf}/>
+        <Route path="/categorias" component={Categorias}/>
+        <Route path="/instituicoesprof" component={InstituicoesProf}/>
+        <Route path="/instituicoes" component={Instituicoes}/>
+        <Route path="/cursoprof" component={CursoProf}/>
+        <Route path="/curso" component={Curso}/>
         <Route component={NaoEncontrada}/>
       </Switch>
   </Router>

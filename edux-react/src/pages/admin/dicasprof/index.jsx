@@ -30,6 +30,22 @@ const DicasProf = () => {
             .catch(err => console.error(err));
     }
 
+    const editar = (event) => {
+
+        event.preventDefault();
+
+        console.log('editar' + event.target.value);
+
+    }
+
+    const remover = (event) => {
+
+        event.preventDefault();
+
+        console.log('remover' + event.target.value);
+
+    }
+
 
     return(
         <div>
@@ -54,8 +70,8 @@ const DicasProf = () => {
                                 <td><img src={item.imagem} style={{ width : '120px'}}/></td>
                                 <td>{item.texto}</td>
                                 <td className="curso"style={{marginLeft : '100px'}}>
-                                    <Button variant="success" style={{marginLeft : '200px'}}>Editar</Button>{' '}
-                                    <Button variant="danger" style={{marginLeft : '20px', marginRight : 'auto'}}>Deletar</Button>{' '}
+                                    <Button variant="warning" value={item.id} onClick={event => editar(event)} style={{marginLeft : '200px'}} >Editar</Button>{' '}
+                                    <Button variant="danger" value={item.id} onClick={event => remover(event)} style={{marginLeft : '20px', marginRight : 'auto'}}>Deletar</Button>{' '}
                                 </td>
                             </tr>
                             )

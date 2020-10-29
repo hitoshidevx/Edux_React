@@ -41,11 +41,11 @@ const InicioAluno = () =>{
                         <Card style={{ width: '18rem' }}>
                         <Card.Img variant="top" src="https://abmes.org.br/arquivos/noticias/insights08042020.png" />
                             <Card.Body>
-                                <Card.Title>Ir para objetivos</Card.Title>
+                                <Card.Title>Ir para cursos</Card.Title>
                                 <Card.Text>
                                 Verifique os objetivos cadastrados pelo seu professor.
                                 </Card.Text>
-                                <Button variant="primary">Bora!</Button>
+                                <Button variant="primary" href='/curso'>Bora!</Button>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -57,7 +57,7 @@ const InicioAluno = () =>{
                                 <Card.Text>
                                 Verifique a instituição na qual voce estuda e suas informações.
                                 </Card.Text>
-                                <Button className="text-center" variant="primary">Bora!</Button>
+                                <Button variant="primary" href='/instituicoes'>Bora!</Button>
                             </Card.Body>
                         </Card>
                     </Col>
