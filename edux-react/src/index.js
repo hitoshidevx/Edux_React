@@ -7,6 +7,7 @@ import Cadastrar from './pages/cadastrar';
 import NaoEncontrada  from './pages/naoencontrada';
 import Dicas from './pages/dicas';
 import Inicio from './pages/inicio';
+import Turma from './pages/turma'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -20,6 +21,7 @@ const routing = (
         <Route path="/cadastrar" component={Cadastrar}/>
         <Route path="/dicas" component={Dicas}/>
         <Route path="/inicio" component={Inicio}/>
+        <Route path="/turma" component={Turma}/>
         <Route component={NaoEncontrada}/>
       </Switch>
   </Router>
