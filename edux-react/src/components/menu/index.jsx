@@ -49,7 +49,7 @@ const Menu = () => {
                         <NavDropdown.Divider />
                         <NavDropdown.Item href="/instituicoesprof">Instituições - Prof</NavDropdown.Item>
                         <NavDropdown.Divider />
-                        <NavDropdown.Item href="/cursoprof"> - Prof</NavDropdown.Item>
+                        <NavDropdown.Item href="/cursoprof">Curso - Prof</NavDropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
                 <Dropdown>
