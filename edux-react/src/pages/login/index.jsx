@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
+import jwt_decode from "jwt-decode";
 import Menu from '../../components/menu';
 import Rodape from '../../components/rodape';
 import logo from '../../assets/img/logo.png'
+import { url } from '../../utils/constants';
 import { Form, Container, Button } from 'react-bootstrap'
 import './index.css';
 
@@ -18,7 +20,7 @@ const Login = () =>{
 
         console.log(`${email} - ${senha}`);
 
-        fetch('https://localhost:5001/api/login',{
+        fetch(`${url}login`, {
         method : 'POST',
         body : JSON.stringify({
             email : email,
@@ -44,15 +46,23 @@ const Login = () =>{
 
             localStorage.setItem('token-edux', data.token);
 
-            history.push("/inicio");
+            let usuario = jwt_decode(data.token);
+
+            if(usuario.Role === "2"){
+
+                history.push('/inicioprof')
+
+            } else {
+                history.push('/inicioaluno')
+            }
         })
-        .then(err => console.log(err))
+        .catch(err => console.log(err))
     } 
 
     return(
-        <div>
+        <div className='cordefundo' style={{background : '#303A40'}}>
             <Menu />
-            <Container className='form-height'style={{marginTop : '100px'}}>
+            <Container className='form-height'style={{marginTop : '100px', borderRadius : '30px'}}>
                 <Form className='form-signin' onSubmit={event => logar(event)}>
                     <div className="text-center">
                         <img src={logo} alt="Nyous" style={{width : "250px"}}/>
