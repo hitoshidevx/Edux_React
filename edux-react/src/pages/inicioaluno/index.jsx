@@ -63,9 +63,9 @@ const InicioAluno = () =>{
                         <Card style={{ width: '18rem' }}>
                         <Card.Img variant="top" src="https://www.cobranews.com.br/wp-content/uploads/2020/04/escola-1024x576.jpg" />
                             <Card.Body>
-                                <Card.Title>Ir para cursos</Card.Title>
+                                <Card.Title>Ir para sua instituição</Card.Title>
                                 <Card.Text>
-                                Verifique seus cursos.
+                                Verifique a instituição na qual voce estuda e suas informações.
                                 </Card.Text>
                                 <Button className="text-center" variant="primary">Bora!</Button>
                             </Card.Body>

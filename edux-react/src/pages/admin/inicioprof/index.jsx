@@ -63,9 +63,9 @@ const InicioProf = () =>{
                         <Card style={{ width: '18rem' }}>
                         <Card.Img variant="top" src="https://www.cobranews.com.br/wp-content/uploads/2020/04/escola-1024x576.jpg" />
                             <Card.Body>
-                                <Card.Title>Ir para cursos</Card.Title>
+                                <Card.Title>Ir para instituições</Card.Title>
                                 <Card.Text>
-                                Cadastre um curso.
+                                Cadastre um aluno numa instituição.
                                 </Card.Text>
                                 <Button className="text-center" variant="primary">Bora!</Button>
                             </Card.Body>
