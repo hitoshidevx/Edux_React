@@ -7,7 +7,7 @@ const Home = () =>{
 
     return(
 
-        <div>
+        <div className='ajustecor' style={{ backgroundColor : '#4e0d21' }}>
             <Menu />
             <Carousel>
             <Carousel.Item>
@@ -22,9 +22,9 @@ const Home = () =>{
                 </Carousel.Caption>
             </Carousel.Item>
             </Carousel>
-            <Jumbotron className="text-center">
-                <h2>Estudar nunca foi tão divertido!!</h2>
-                <p>
+            <Jumbotron className="text-center" style={{backgroundColor : '#661229', borderRadius : '5px', marginTop : '50px'}}>
+                <h2 className='ajustar' style={{color : 'white'}}>Estudar nunca foi tão divertido!!</h2>
+                <p className='ajustar' style={{color : 'white'}}>
                     Não perca tempo, comece seus estudos :)
                 </p>
                 <p>
@@ -32,7 +32,7 @@ const Home = () =>{
                     <Button variant="success" href="/cadastrar" style={{marginLeft: '30px'}}>Cadastrar</Button>
                 </p>
                 </Jumbotron>
-                <Container>
+                <Container className='ajustar' style={{ marginTop : '90px' }}>
                 <Row>
                     <Col>
                         <Card style={{ width: '18rem' }}>

@@ -8,32 +8,22 @@ const InicioProf = () =>{
 
     return(
 
-        <div>
+        <div className='ajustecor' style={{ backgroundColor : '#4e0d21' }}> 
             <Menu />
             <Carousel>
             <Carousel.Item>
                 <img
-                className="d-block w-100"
-                src="https://media-exp1.licdn.com/dms/image/C561BAQF4ImXQA9JqnA/company-background_10000/0?e=2159024400&v=beta&t=VPAXeefZUSD53KAJICque7AHlm2feGnOs9jGdGNljKw"
+                className="d-block w-100" style={{opacity : '60%'}}
+                src="https://www.edools.com/wp-content/uploads/2016/07/professor-EAD.png"
                 alt="First slide"
                 />
                 <Carousel.Caption>
-                <h3>Facil e Prático</h3>
-                <p>Edux possue funções práticas e auto-explicativas.</p>
+                <h3>Bem vindo, professor!</h3>
+                <p>Use essa página para acessar o seu gerenciamento.</p>
                 </Carousel.Caption>
             </Carousel.Item>
             </Carousel>
-            <Jumbotron className="text-center">
-                <h2>Estudar nunca foi tão divertido!!</h2>
-                <p>
-                    Não perca tempo, comece seus estudos :)
-                </p>
-                <p>
-                    <Button variant="primary" href="/login">Login</Button>
-                    <Button variant="success" href="/cadastrar" style={{marginLeft: '30px'}}>Cadastrar</Button>
-                </p>
-                </Jumbotron>
-                <Container>
+                <Container className='ajustar' style={{ marginTop : '90px' }}>
                 <Row>
                     <Col>
                         <Card style={{ width: '18rem' }}>
