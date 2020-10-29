@@ -1,12 +1,10 @@
-# Getting Started with Create React App
+# Edux - React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Um pequeno e simples projeto acadêmico feito pela equipe de dev *HTRAP* a pedido dos docentes da escola SENAI de Informática. 
 
-## Available Scripts
+## Como rodar o aplicativo?
 
-In the project directory, you can run:
-
-### `yarn start`
+### Simples, basta clonar o repositório,, abrir o cmd e enviar esse comando: `yarn start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
