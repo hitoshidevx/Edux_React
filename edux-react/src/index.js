@@ -6,10 +6,7 @@ import Login from './pages/login';
 import Cadastrar from './pages/cadastrar';
 import NaoEncontrada  from './pages/naoencontrada';
 import Dicas from './pages/dicas';
-<<<<<<< HEAD
-import Inicio from './pages/inicio';
 import Turma from './pages/turma'
-=======
 import DicasProf from './pages/admin/dicasprof';
 import InicioAluno from './pages/inicioaluno';
 import InicioProf from './pages/admin/inicioprof';
@@ -19,7 +16,6 @@ import InstituicoesProf from './pages/admin/instituicoesprof';
 import Instituicoes from './pages/instituicoes';
 import CursoProf from './pages/admin/cursoprof';
 import Curso from './pages/curso';
->>>>>>> 7516691576e475520dfad2daa5316e02f9439c87
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -32,10 +28,7 @@ const routing = (
         <Route path="/login" component={Login}/>
         <Route path="/cadastrar" component={Cadastrar}/>
         <Route path="/dicas" component={Dicas}/>
-<<<<<<< HEAD
-        <Route path="/inicio" component={Inicio}/>
         <Route path="/turma" component={Turma}/>
-=======
         <Route path="/dicasprof" component={DicasProf}/>
         <Route path="/inicioaluno" component={InicioAluno}/>
         <Route path="/inicioprof" component={InicioProf}/>
@@ -45,7 +38,6 @@ const routing = (
         <Route path="/instituicoes" component={Instituicoes}/>
         <Route path="/cursoprof" component={CursoProf}/>
         <Route path="/curso" component={Curso}/>
->>>>>>> 7516691576e475520dfad2daa5316e02f9439c87
         <Route component={NaoEncontrada}/>
       </Switch>
   </Router>
