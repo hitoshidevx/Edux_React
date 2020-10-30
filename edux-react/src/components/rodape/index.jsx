@@ -5,7 +5,7 @@ const Rodape = () =>{
 
     return(
 
-        <footer className="text-center" style={{marginTop : '150px', background : '#4c0017'}}>
+        <footer className="text-center" style={{marginTop : '150px', background : '#272c31'}}>
             <div className="text-center">
                 <img src={logobranco} alt="Nyous" style={{width : "100px"}}/>
             </div>

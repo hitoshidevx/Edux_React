@@ -28,8 +28,8 @@ const Menu = () => {
             </Nav>
         );
     } else if (jwt_decode(token).Role === "2") {
-        // Role = 1 (Administrador)
-        // Role = 2 (Padrão)
+        // Role = 2 (Administrador)
+        // Role = 3 (Padrão)
         return (
             <Nav>
 
