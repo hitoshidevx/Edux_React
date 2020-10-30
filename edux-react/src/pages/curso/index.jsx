@@ -4,12 +4,16 @@ import Rodape from '../../components/rodape';
 import Titulo from '../../components/titulo';
 
 const Curso = () => {
+    
+    const listar = () => {
 
+}
     return(
 
         <div>
             <Menu />
-            <Titulo titulo="Curso" chamada="Consulte seus cursos" />
+           
+            
             <Rodape />
         </div>
 
