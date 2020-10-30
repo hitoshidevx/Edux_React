@@ -1,8 +1,9 @@
 import React from 'react';
-import { Container, Table } from 'react-bootstrap';
+import { Container, ListGroup, Button } from 'react-bootstrap';
 import Menu from '../../components/menu';
 import Titulo from '../../components/titulo';
 import Rodape from '../../components/rodape';
+import './index.css'
 
 const Usuario = () => {
     return (
@@ -10,13 +11,10 @@ const Usuario = () => {
             <Menu />
             <Titulo titulo="Usuário" chamada="Verifique suas informações" />
             <Container>
-                <Table striped bordered hover variant="dark">
+                {/* <Table striped bordered hover variant="dark">
                     <thead>
                         <tr>
-                        <th>#</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Username</th>
+                            <td>Perfil</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -38,7 +36,19 @@ const Usuario = () => {
                             <td>@twitter</td>
                         </tr>
                     </tbody>
-                </Table>
+                </Table> */}
+                <div className="imagemcenter">
+                    <img src="https://www.reabilitybauru.com.br/wp-content/uploads/2017/01/perfil-300x300.png" alt="Perfil"/>
+                </div>
+                <ListGroup className="tabelasize">
+                    <ListGroup.Item className="tituloPerfil">Perfil</ListGroup.Item>
+                    <ListGroup.Item className="infoPerfil" >Nome: ...</ListGroup.Item>
+                    <ListGroup.Item className="infoPerfil" >Email: ...</ListGroup.Item>
+                    <ListGroup.Item className="infoPerfil" >Turma: ...</ListGroup.Item>
+                    <ListGroup.Item className="infoPerfil" >Intituição: ...</ListGroup.Item>
+                    <ListGroup.Item className="infoPerfil" >Tipo de Usuário: ...</ListGroup.Item>
+                </ListGroup>
+                <Button variant="warning" size="lg" className="centralizar">Editar</Button>
             </Container>
             <Rodape />
         </div>
