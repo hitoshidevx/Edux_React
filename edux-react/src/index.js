@@ -29,19 +29,19 @@ const routing = (
         <Route exact path="/" component={Home}/>
         <Route path="/login" component={Login}/>
         <Route path="/cadastrar" component={Cadastrar}/>
-        <Route path="/dicas" component={Dicas}/>
-        <Route path="/turma" component={Turma}/>
-        <Route path="/turmaprof" component={TurmaProf}/>
-        <Route path="/dicasprof" component={DicasProf}/>
         <Route path="/inicioaluno" component={InicioAluno}/>
         <Route path="/inicioprof" component={InicioProf}/>
-        <Route path="/categoriasprof" component={CategoriaProf}/>
+        <Route path="/turma" component={Turma}/>
+        <Route path="/turmasprof" component={TurmaProf}/>
+        <Route path="/dicas" component={Dicas}/>
+        <Route path="/dicasprof" component={DicasProf}/>
         <Route path="/categorias" component={Categorias}/>
-        <Route path="/usuario" component={Usuario}/>
+        <Route path="/categoriasprof" component={CategoriaProf}/>
         <Route path="/instituicoesprof" component={InstituicoesProf}/>
         <Route path="/instituicoes" component={Instituicoes}/>
         <Route path="/cursoprof" component={CursoProf}/>
         <Route path="/curso" component={Curso}/>
+        <Route path="/usuario" component={Usuario}/>
         <Route component={NaoEncontrada}/>
       </Switch>
   </Router>

@@ -33,13 +33,13 @@ const Menu = () => {
         return (
             <Nav>
 
-                <NavDropdown.Item href="/inicioprof" style={{ color: '#00C2EE' }} variant="dark">
+                <NavDropdown.Item href="/inicioprof" style={{ color: '#00C2EE' }} variant="dark"> 
                     <strong>Início</strong>
                 </NavDropdown.Item>
 
                 <Dropdown>
                     <Dropdown.Toggle style={{ color: '#00C2EE' }} variant="dark" id="dropdown-basic">
-                        <strong>Dashboard</strong>
+                        <strong>Menu</strong>
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
@@ -60,7 +60,7 @@ const Menu = () => {
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
-                        <NavDropdown.Item href="/perfil">Perfil</NavDropdown.Item>
+                        <NavDropdown.Item href="/usuario">Perfil</NavDropdown.Item>
                         <NavDropdown.Divider />
                         <NavDropdown.Item onClick={event => sair(event)} >Sair</NavDropdown.Item>
                     </Dropdown.Menu>
@@ -77,7 +77,7 @@ const Menu = () => {
 
                 <Dropdown>
                     <Dropdown.Toggle style={{ color: '#00C2EE' }} variant="dark" id="dropdown-basic">
-                        <strong>Dashboard</strong>
+                        <strong>Menu</strong>
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
