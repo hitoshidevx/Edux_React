@@ -1,7 +1,7 @@
 import React from 'react';
 import Menu from '../../components/menu';
 import Rodape from '../../components/rodape';
-import {Carousel, Jumbotron, Button, Card, Col, Row, Container} from 'react-bootstrap';
+import {Carousel, Button, Card, Col, Row, Container} from 'react-bootstrap';
 
 
 const InicioAluno = () =>{

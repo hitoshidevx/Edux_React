@@ -28,18 +28,18 @@ const Menu = () => {
             </Nav>
         );
     } else if (jwt_decode(token).Role === "2") {
-        // Role = 1 (Administrador)
-        // Role = 2 (Padrão)
+        // Role = 2 (Administrador)
+        // Role = 3 (Padrão)
         return (
             <Nav>
 
-                <NavDropdown.Item href="/inicioprof" style={{ color: '#00C2EE' }} variant="dark">
+                <NavDropdown.Item href="/inicioprof" style={{ color: '#00C2EE' }} variant="dark"> 
                     <strong>Início</strong>
                 </NavDropdown.Item>
 
                 <Dropdown>
                     <Dropdown.Toggle style={{ color: '#00C2EE' }} variant="dark" id="dropdown-basic">
-                        <strong>Dashboard</strong>
+                        <strong>Menu</strong>
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
@@ -49,7 +49,9 @@ const Menu = () => {
                         <NavDropdown.Divider />
                         <NavDropdown.Item href="/instituicoesprof">Instituições - Prof</NavDropdown.Item>
                         <NavDropdown.Divider />
-                        <NavDropdown.Item href="/cursoprof"> - Prof</NavDropdown.Item>
+                        <NavDropdown.Item href="/cursoprof">Curso - Prof</NavDropdown.Item>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item href="/turmasprof">Turmas - Prof</NavDropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
                 <Dropdown>
@@ -58,7 +60,7 @@ const Menu = () => {
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
-                        <NavDropdown.Item href="/perfil">Perfil</NavDropdown.Item>
+                        <NavDropdown.Item href="/usuario">Perfil</NavDropdown.Item>
                         <NavDropdown.Divider />
                         <NavDropdown.Item onClick={event => sair(event)} >Sair</NavDropdown.Item>
                     </Dropdown.Menu>
@@ -75,7 +77,7 @@ const Menu = () => {
 
                 <Dropdown>
                     <Dropdown.Toggle style={{ color: '#00C2EE' }} variant="dark" id="dropdown-basic">
-                        <strong>Dashboard</strong>
+                        <strong>Menu</strong>
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
