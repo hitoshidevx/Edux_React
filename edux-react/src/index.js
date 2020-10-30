@@ -31,7 +31,7 @@ const routing = (
         <Route path="/cadastrar" component={Cadastrar}/>
         <Route path="/dicas" component={Dicas}/>
         <Route path="/turma" component={Turma}/>
-        <Route path="/admin/turmaprof" component={TurmaProf}/>
+        <Route path="/turmaprof" component={TurmaProf}/>
         <Route path="/dicasprof" component={DicasProf}/>
         <Route path="/inicioaluno" component={InicioAluno}/>
         <Route path="/inicioprof" component={InicioProf}/>

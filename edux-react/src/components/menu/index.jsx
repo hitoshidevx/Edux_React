@@ -49,7 +49,9 @@ const Menu = () => {
                         <NavDropdown.Divider />
                         <NavDropdown.Item href="/instituicoesprof">Instituições - Prof</NavDropdown.Item>
                         <NavDropdown.Divider />
-                        <NavDropdown.Item href="/cursoprof"> - Prof</NavDropdown.Item>
+                        <NavDropdown.Item href="/cursoprof">Curso - Prof</NavDropdown.Item>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item href="/turmasprof">Turmas - Prof</NavDropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
                 <Dropdown>
@@ -86,6 +88,8 @@ const Menu = () => {
                         <NavDropdown.Item href="/instituicoes">Instituições</NavDropdown.Item>
                         <NavDropdown.Divider />
                         <NavDropdown.Item href="/curso">Curso</NavDropdown.Item>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item href="/turma">Turmas</NavDropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
                 <Dropdown>
