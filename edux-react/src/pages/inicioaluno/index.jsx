@@ -41,11 +41,11 @@ const InicioAluno = () =>{
                         <Card style={{ width: '18rem' }}>
                         <Card.Img variant="top" src="https://abmes.org.br/arquivos/noticias/insights08042020.png" />
                             <Card.Body>
-                                <Card.Title>Ir para cursos</Card.Title>
+                                <Card.Title>Ir para turma</Card.Title>
                                 <Card.Text>
-                                Verifique os objetivos cadastrados pelo seu professor.
+                                Veja sua turma e seus objetivos!
                                 </Card.Text>
-                                <Button variant="primary" href='/curso'>Bora!</Button>
+                                <Button variant="primary" href='/turma'>Bora!</Button>
                             </Card.Body>
                         </Card>
                     </Col>

@@ -98,7 +98,7 @@ const Menu = () => {
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
-                        <Dropdown.Item href="/perfil">Perfil</Dropdown.Item>
+                        <Dropdown.Item href="/usuario">Perfil</Dropdown.Item>
                         <Dropdown.Divider />
                         <Dropdown.Item onClick={event => sair(event)} >Sair</Dropdown.Item>
                     </Dropdown.Menu>
