@@ -7,7 +7,8 @@ import { Form, Container, Button } from 'react-bootstrap'
 import './index.css'
 
 const Cadastrar = () => {
-
+    
+    const [idUsuario, setIdUsuario] = useState('');
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
@@ -34,10 +35,10 @@ const Cadastrar = () => {
         fetch(`${url}usuarios`, {
             method: 'POST',
             body: JSON.stringify({
-                nome: nome,
-                email: email,
-                senha: senha,
-                idPerfil: idPerfil
+                nome     : nome,
+                email    : email,
+                senha    : senha,
+                idPerfil : idPerfil
 
             }),
             headers: {
