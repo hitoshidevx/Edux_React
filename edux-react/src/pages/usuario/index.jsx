@@ -11,32 +11,6 @@ const Usuario = () => {
             <Menu />
             <Titulo titulo="Usuário" chamada="Verifique suas informações" />
             <Container>
-                {/* <Table striped bordered hover variant="dark">
-                    <thead>
-                        <tr>
-                            <td>Perfil</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td colSpan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
-                    </tbody>
-                </Table> */}
                 <div className="imagemcenter">
                     <img src="https://www.reabilitybauru.com.br/wp-content/uploads/2017/01/perfil-300x300.png" alt="Perfil"/>
                 </div>

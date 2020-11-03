@@ -3,7 +3,7 @@ import Menu from '../../../components/menu';
 import Titulo from '../../../components/titulo';
 import Rodape from '../../../components/rodape';
 import {url} from '../../../utils/constants';
-import {Container} from 'react-bootstrap';
+import {Container, Button, CardDeck, Card, Dropdown, Form} from 'react-bootstrap';
 import './index.css';
 
 const CategoriasProf = () => {
@@ -24,7 +24,7 @@ const CategoriasProf = () => {
         fetch(url + 'categoria')
         .then(response => response.json())
         .then(data => {
-            setCategoria(data)
+            setCurso(data)
             console.log(data);
         })
 
