@@ -3,12 +3,14 @@ import Menu from '../../../components/menu';
 import Titulo from '../../../components/titulo';
 import Rodape from '../../../components/rodape';
 import {url} from '../../../utils/constants';
-import {Container} from 'react-bootstrap';
-import './index.css';
+import {Container, Button, CardDeck, Card, Dropdown, Form} from 'react-bootstrap';
 
 const CategoriasProf = () => {
+    
+    const [id, setId] = useState(0);
     const [aluno, setAluno] = useState('');
     const [curso, setCurso] = useState('');
+    const [categoria, setCategoria] = useState([]);
 
     useEffect(() => {
         listar();
