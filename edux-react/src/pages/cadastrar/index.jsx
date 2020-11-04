@@ -44,10 +44,10 @@ const Cadastrar = () => {
             headers: {
                 'content-type': 'application/json'
             }
-        })
+            })
             .then(response => {
                 if (response.ok) {
-                    return response.json();
+                    alert('Cadastro realizado! Clique em "já tenho conta" e comece já!')
                 }
             })
     }
@@ -80,7 +80,7 @@ const Cadastrar = () => {
 
                     <Form.Group controlId="formBasicPerfil">
                         <Form.Label>Tipo de usuário</Form.Label>
-                        <Form.Control as="select" type="text" placeholder="Informe o tipo de usuário" value={idPerfil} onChange={event => setidPerfil(event.target.value)} >
+                        <Form.Control as="select" type="text" placeholder="Informe o tipo de usuário" value={idPerfil} onChange={event => setidPerfil(parseInt(event.target.value))} >
                             {
                                 perfis.map((item, index) => {
                                     return(

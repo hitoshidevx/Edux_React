@@ -4,11 +4,17 @@ import Titulo from '../../../components/titulo';
 import Rodape from '../../../components/rodape';
 import {url} from '../../../utils/constants';
 import {Container, Button, CardDeck, Card, Dropdown, Form} from 'react-bootstrap';
+<<<<<<< HEAD
 import './index.css';
+=======
+>>>>>>> 41b945542bc8ddbb2880cec22e6e54ab71737dc9
 
 const CategoriasProf = () => {
+    
+    const [id, setId] = useState(0);
     const [aluno, setAluno] = useState('');
     const [curso, setCurso] = useState('');
+    const [categoria, setCategoria] = useState([]);
 
     useEffect(() => {
         listar();
