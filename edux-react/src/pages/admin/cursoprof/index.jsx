@@ -7,6 +7,7 @@ import Titulo from '../../../components/titulo'
 
 const CursoProf = () => {
     const [idCurso, setIdCurso] = useState(0);
+    const [idInstituicao, setIdInstituicao] = useState(0);
     const [titulo, setTitulo] = useState('');
     const [cursos, setCursos] = useState([]);
     const [instituicoes, setInstituicoes] = useState([]);
@@ -20,7 +21,7 @@ const CursoProf = () => {
         fetch(url + 'curso')
             .then(response => response.json())
             .then(data => {
-                setCursos(data.data);
+                setCursos(data);
                 limparCampos();
             })
             .catch(err => console.error(err));
@@ -36,17 +37,22 @@ const CursoProf = () => {
             .catch(err => console.error(err));
     }
 
-    const editar = (event) => {
+    const editar = (event) =>{
         event.preventDefault();
 
-        fetch(`${url}curso/${event.target.value}`)
-            .then(response => response.json())
-            .then(dado => {
-                console.log(dado)
-                setIdCurso(dado.idCurso)
-                setTitulo(dado.titulo)
-            })
-    }
+        fetch(url + '/curso/' + event.target.value, {
+           method : 'GET',
+           headers : {
+               'authorization' : 'Bearer ' + localStorage.getItem('token-edux')
+           }
+       })
+       .then(response => response.json())
+       .then(dado => {
+           setIdCurso(dado.idCurso);
+           setTitulo(dado.titulo);
+           setIdInstituicao(dado.idInstituicao);
+       })
+   }
 
     const excluir = (event) => {
         event.preventDefault();
@@ -70,7 +76,8 @@ const CursoProf = () => {
         event.preventDefault();
 
         const curso = {
-            titulo: titulo
+            titulo: titulo,
+            idInstituicao : idInstituicao
         }
 
         let method = (idCurso === 0 ? 'POST' : 'PUT')
@@ -97,7 +104,7 @@ const CursoProf = () => {
     }
 
     return (
-        <div style={{ background: '#4e0d21' }}>
+        <div >
             <Menu />
             <Container style={{ marginTop: '4em' }}>
                 <Titulo
