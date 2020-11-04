@@ -39,8 +39,8 @@ const Instituicoes = () => {
         <div>
             <Menu />
             <Titulo titulo="Instituições" chamada="Consulte sua instituição" />
-            <Container>
-                <Table style={{ background: '#FFFFFF', borderRadius: '10px', marginTop: '2em' }} striped hover>
+            <Container style={{marginTop : '20px'}}>
+                <Table style={{ background: '#FFFFFF', borderRadius: '10px', marginTop: '100px' }} striped hover>
                     <thead>
                         <tr>
                             <th>Nome</th>
@@ -51,7 +51,6 @@ const Instituicoes = () => {
                             <th>Cidade</th>
                             <th>Uf</th>
                             <th>Cep</th>
-                            <th>Ações</th>
                         </tr>
                     </thead>
                     <tbody>

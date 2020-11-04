@@ -13,7 +13,7 @@ const CursoProf = () => {
 
     useEffect(() => {
         listarCursos()
-        listarInsitiuicao()
+        listarInstituicao()
     }, []);
 
     const listarCursos = () => {
@@ -26,7 +26,7 @@ const CursoProf = () => {
             .catch(err => console.error(err));
     }
 
-    const listarInsitiuicao = () => {
+    const listarInstituicao = () => {
         fetch(url + 'instituicao')
             .then(response => response.json())
             .then(data => {
