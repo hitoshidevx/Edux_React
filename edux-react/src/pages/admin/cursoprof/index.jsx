@@ -28,10 +28,10 @@ const CursoProf = () => {
     }
 
     const listarInstituicao = () => {
-        fetch(url + 'instituicao')
+        fetch(url + 'instituicaos')
             .then(response => response.json())
             .then(data => {
-                setInstituicoes(data.data);
+                setInstituicoes(data);
                 limparCampos();
             })
             .catch(err => console.error(err));
@@ -40,7 +40,7 @@ const CursoProf = () => {
     const editar = (event) =>{
         event.preventDefault();
 
-        fetch(url + '/curso/' + event.target.value, {
+        fetch(`${url}/curso/${event.target.value}`, {
            method : 'GET',
            headers : {
                'authorization' : 'Bearer ' + localStorage.getItem('token-edux')
@@ -100,6 +100,7 @@ const CursoProf = () => {
 
     const limparCampos = () => {
         setIdCurso(0);
+        setIdInstituicao(0);
         setTitulo('');
     }
 
@@ -118,11 +119,11 @@ const CursoProf = () => {
                             </Form.Group>
                             <Form.Group controlId="formBasicPerfil">
                                 <Form.Label>Instituição</Form.Label>
-                                <Form.Control as="select">
+                                <Form.Control as="select" size="sg" custom defaultValue={idInstituicao} onChange={event => setIdInstituicao(parseInt(event.target.value))}>
                                     {
                                         instituicoes.map((item, index) => {
                                             return (
-                                                <option value={item.idInstituicao}>{item.nome}</option>
+                                                <option key={index} value={item.idInstituicao}>{item.nome}</option>
                                             )
                                         })
                                     }

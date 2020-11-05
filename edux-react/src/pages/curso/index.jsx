@@ -3,7 +3,7 @@ import Menu from '../../components/menu';
 import Rodape from '../../components/rodape';
 import Titulo from '../../components/titulo';
 import { url } from '../../utils/constants';
-import { Button, Container, Table } from 'react-bootstrap';
+import { Button, Container, Table, Popover, OverlayTrigger, Row, Card } from 'react-bootstrap';
 
 const Curso = () => {
     
@@ -37,51 +37,61 @@ const Curso = () => {
             .catch(err => console.error(err));
     }
 
-    return(
+    const popoverInformatica = (
+        <Popover id="popover-basic">
+            <Popover.Title as="h3">Informações sobre a instituição</Popover.Title>
+            <Popover.Content>
+                {
+                    instituicoes.map((item, index) => {
+                        return (
+                            <p>
+                                Rua: {item.logradouro}<br />
+                                Bairro: {item.bairro}<br />
+                                Numero: {item.numero}
+                            </p>
+                        )
+                    })
+                }
+            </Popover.Content>
+        </Popover>
+    );
 
+    const PopoverInformatica = () => (
+        <OverlayTrigger trigger="click" placement="bottom" overlay={popoverInformatica}>
+            <Button style={{ background: '#00C2EE', borderColor: '#00C2EE', marginLeft : '20px' }}>Clique para mais informações</Button>
+        </OverlayTrigger>
+    );
+
+    return (
         <div>
             <Menu />
-            <Titulo titulo="Curso" chamada="Visualize seu curso!" />
             <Container>
-                <Table style={{ background: '#FFFFFF', borderRadius: '10px', marginTop: '2em' }} striped hover>
-                    <thead>
-                        <tr>
-                            <th>Curso</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            curso.map((item, index) => {
-                                return (
-                                    <tr key={index}>
-                                        <td>{item.titulo}</td>
-                                    </tr>
-                                )
-                            })
-                        }
-                    </tbody>
-                    <thead>
-                        <tr>
-                            <th>Instituição</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            instituicoes.map((item, index) => {
-                                return (
-                                    <tr key={index}>
-                                        <td>{item.nome}</td>
-                                    </tr>
-                                )
-                            })
-                        }
-                    </tbody>
-                </Table>
-             </Container>
+                <Row style={{ margin: '3em -1em 0' }}>
+                    {
+                        curso.map((item, index) => {
+                            return (
+                                <Card style={{ width: '20rem', margin: '3em' }}>
+                                    <Card.Body>
+                                        <Card.Title value={item.titulo}>{item.titulo}</Card.Title>
+                                        <Card.Text>{
+                                            instituicoes.map((item, index) => {
+                                                return (
+                                                    <p style={{marginLeft : '60px'}}>{item.nome}</p>
+                                                )
+                                            })
+                                        }
+                                        </Card.Text>
+                                        <PopoverInformatica />
+                                    </Card.Body>
+                                </Card>
+                            )
+                        })
+                    }
+                </Row>
+            </Container>
             <Rodape />
         </div>
     )
-
 }
 
 export default Curso;
