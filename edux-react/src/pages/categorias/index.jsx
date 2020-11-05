@@ -8,16 +8,15 @@ import {url} from '../../utils/constants';
 const Categorias = () => {
     
     const [id, setId] = useState(0);
-    const [aluno, setAluno] = useState('');
-    const [curso, setCurso] = useState('');
+    const [tipo, setTipo] = useState('');
     const [categoria, setCategoria] = useState([]);
 
     useEffect(() => {
-        listar();
+        listarCategoria();
         
     }, []);
 
-    const listar = () => {
+    const listarCategoria = () => {
         fetch(url + 'categoria')
             .then(response => response.json())
             .then(data => {
@@ -36,19 +35,15 @@ const Categorias = () => {
                     <Table striped bordered hover>
                         <thead>
                             <tr>
-                                <th>Nome</th>
-                                <th>Curso</th>
-                                <th>Categoria</th>
+                                <th>Tipo</th>
                             </tr>
                         </thead>
                         
                         <tbody>
                             {
-                                curso.map((item, index) => {
+                                categoria.map((item, index) => {
                                     return(
                                     <tr>
-                                        <td><img src={item.nome} style={{ width : '120px'}}/></td>
-                                        <td>{item.curso}</td>
                                         <td>{item.tipo}</td>
                                     </tr>
                                     )

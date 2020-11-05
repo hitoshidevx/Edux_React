@@ -7,46 +7,52 @@ import Titulo from '../../../components/titulo'
 
 const CursoProf = () => {
     const [idCurso, setIdCurso] = useState(0);
+    const [idInstituicao, setIdInstituicao] = useState(0);
     const [titulo, setTitulo] = useState('');
     const [cursos, setCursos] = useState([]);
     const [instituicoes, setInstituicoes] = useState([]);
 
     useEffect(() => {
         listarCursos()
-        listarInsitiuicao()
+        listarInstituicao()
     }, []);
 
     const listarCursos = () => {
         fetch(url + 'curso')
             .then(response => response.json())
             .then(data => {
-                setCursos(data.data);
+                setCursos(data);
                 limparCampos();
             })
             .catch(err => console.error(err));
     }
 
-    const listarInsitiuicao = () => {
-        fetch(url + 'instituicao')
+    const listarInstituicao = () => {
+        fetch(url + 'instituicaos')
             .then(response => response.json())
             .then(data => {
-                setInstituicoes(data.data);
+                setInstituicoes(data);
                 limparCampos();
             })
             .catch(err => console.error(err));
     }
 
-    const editar = (event) => {
+    const editar = (event) =>{
         event.preventDefault();
 
-        fetch(`${url}curso/${event.target.value}`)
-            .then(response => response.json())
-            .then(dado => {
-                console.log(dado)
-                setIdCurso(dado.idCurso)
-                setTitulo(dado.titulo)
-            })
-    }
+        fetch(`${url}/curso/${event.target.value}`, {
+           method : 'GET',
+           headers : {
+               'authorization' : 'Bearer ' + localStorage.getItem('token-edux')
+           }
+       })
+       .then(response => response.json())
+       .then(dado => {
+           setIdCurso(dado.idCurso);
+           setTitulo(dado.titulo);
+           setIdInstituicao(dado.idInstituicao);
+       })
+   }
 
     const excluir = (event) => {
         event.preventDefault();
@@ -70,7 +76,8 @@ const CursoProf = () => {
         event.preventDefault();
 
         const curso = {
-            titulo: titulo
+            titulo: titulo,
+            idInstituicao : idInstituicao
         }
 
         let method = (idCurso === 0 ? 'POST' : 'PUT')
@@ -93,11 +100,12 @@ const CursoProf = () => {
 
     const limparCampos = () => {
         setIdCurso(0);
+        setIdInstituicao(0);
         setTitulo('');
     }
 
     return (
-        <div style={{ background: '#4e0d21' }}>
+        <div >
             <Menu />
             <Container style={{ marginTop: '4em' }}>
                 <Titulo
@@ -111,11 +119,11 @@ const CursoProf = () => {
                             </Form.Group>
                             <Form.Group controlId="formBasicPerfil">
                                 <Form.Label>Instituição</Form.Label>
-                                <Form.Control as="select">
+                                <Form.Control as="select" size="sg" custom defaultValue={idInstituicao} onChange={event => setIdInstituicao(parseInt(event.target.value))}>
                                     {
                                         instituicoes.map((item, index) => {
                                             return (
-                                                <option value={item.idInstituicao}>{item.nome}</option>
+                                                <option key={index} value={item.idInstituicao}>{item.nome}</option>
                                             )
                                         })
                                     }

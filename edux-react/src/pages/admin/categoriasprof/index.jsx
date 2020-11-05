@@ -9,12 +9,11 @@ import './index.css';
 const CategoriasProf = () => {
     
     const [id, setId] = useState(0);
-    const [aluno, setAluno] = useState('');
-    const [curso, setCurso] = useState('');
     const [categoria, setCategoria] = useState([]);
 
+
     useEffect(() => {
-        listar();
+        listarCategoria();
     }, []);
 
     const adicionar = (event) => {
@@ -23,7 +22,7 @@ const CategoriasProf = () => {
         console.log('adicionar' + event.target.value);
     }
 
-    const listar = () => {
+    const listarCategoria = () => {
         fetch(url + 'categoria')
         .then(response => response.json())
         .then(data => {
@@ -58,10 +57,9 @@ const CategoriasProf = () => {
                             <Card.Img variant="top" className="centro" src="https://conteudo.imguol.com.br/c/noticias/f1/2019/11/02/a-nasa-elegeu-como-foto-astronomica-do-dia-em-22-de-outubro-esta-imagem-da-via-lactea-capturada-por-jheison-huerta-no-salar-de-uyuni-na-bolivia-1572723035380_v2_976x549.jpg" />
 
                             <Card.Body>
-                                <Card.Title>Categoria 1</Card.Title>
+                                <Card.Title>Crítica</Card.Title>
                                 <Card.Text>
-                                    This is a wider card with supporting text below as a natural lead-in to
-                                    additional content. This content is a little bit longer.
+                                    EXTREMAMENTE necessário atingir
                                 </Card.Text>
                                 <div className="botaocentro">
                                     <Dropdown style={{marginRight : "1rem"}}>
@@ -83,10 +81,9 @@ const CategoriasProf = () => {
                             <Card.Img variant="top" className="centro" src="https://conteudo.imguol.com.br/c/noticias/f1/2019/11/02/a-nasa-elegeu-como-foto-astronomica-do-dia-em-22-de-outubro-esta-imagem-da-via-lactea-capturada-por-jheison-huerta-no-salar-de-uyuni-na-bolivia-1572723035380_v2_976x549.jpg" />
 
                             <Card.Body>
-                                <Card.Title>Categoria 2</Card.Title>
+                                <Card.Title>Desejável</Card.Title>
                                 <Card.Text>
-                                    This is a wider card with supporting text below as a natural lead-in to
-                                    additional content. This content is a little bit longer.
+                                    Ia ser legal se atingisse, né?
                                 </Card.Text>
                                 <div className="botaocentro">
                                     <Dropdown style={{marginRight : "1rem"}}>
@@ -108,10 +105,9 @@ const CategoriasProf = () => {
                             <Card.Img variant="top" className="centro" src="https://conteudo.imguol.com.br/c/noticias/f1/2019/11/02/a-nasa-elegeu-como-foto-astronomica-do-dia-em-22-de-outubro-esta-imagem-da-via-lactea-capturada-por-jheison-huerta-no-salar-de-uyuni-na-bolivia-1572723035380_v2_976x549.jpg" />
 
                             <Card.Body>
-                                <Card.Title>Categoria 3</Card.Title>
+                                <Card.Title>Oculta</Card.Title>
                                 <Card.Text>
-                                    This is a wider card with supporting text below as a natural lead-in to
-                                    additional content. This content is a little bit longer.
+                                    Shhhhh! ;)
                                 </Card.Text>
                                 <div className="botaocentro">
                                     <Dropdown style={{marginRight : "1rem"}}>
