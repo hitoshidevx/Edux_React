@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
-=======
-import React, {useState, useEffect} from 'react';
->>>>>>> 41b945542bc8ddbb2880cec22e6e54ab71737dc9
 import Menu from '../../components/menu';
 import Rodape from '../../components/rodape';
 import Titulo from '../../components/titulo';

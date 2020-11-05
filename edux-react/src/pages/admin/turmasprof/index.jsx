@@ -1,27 +1,83 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { Card, CardDeck, Container, Button, Form, Dropdown } from 'react-bootstrap';
 import Menu from '../../../components/menu';
 import Titulo from '../../../components/titulo';
 import Rodape from '../../../components/rodape';
-import './index.css'
+import { url } from '../../../utils/constants';
+import './index.css';
 
 const TurmaProf = () => {
 
+    const [idTurma, setIdTurma] = useState (0);
     const [turma, setTurma] = useState('');
     const [aluno, setAluno] = useState('');
     const [curso, setCurso] = useState('');
 
+    useEffect(() =>{
+        listar();
+    }, [])
+
+    const listar = () => {
+        fetch(`${url}turmasprof`)
+            .then(response => response.json())
+            .then(data =>{
+                setTurma(data.data);
+                limparCampos();
+            })
+            .catch(err => console.error(err))
+    }
+
     const adicionar = (event) => {
         event.PreventDefault();
 
+        fetch(`${url}turmasprof`, {
+            method: 'POST',
+            body: JSON.stringify({
+                turma     : turma,
+                aluno    : aluno,
+                curso    : curso,
+                idTurma : idTurma
+
+            }),
+            headers: {
+                'content-type': 'application/json'
+            }
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Turma Cadastrada!')
+                }
+            })
     }
+    
     const editar = (event) => {
         event.PreventDefault();
 
+        // fetch(`${url}/turmasprof/${event.target.value}`, {
+        //     method : 'GET'
+        // })
+        // .then(response => response.json())
+        // .then(dado => {
+        //     console.log(dado);
+        //     setIdTurma(dado.data.idTurma);
+        //     setTurma(dado.data.turma);
+        //     setAluno(dado.data.aluno);
+        //     setCurso(dado.data.curso);
+        // })
+
+        
     }
     const remover = (event) => {
         event.PreventDefault();
 
+                
+    }
+
+    const limparCampos = () => {
+        setIdTurma(0);
+        setTurma('');
+        setAluno('');
+        setCurso('');
     }
 
     return (
@@ -51,8 +107,8 @@ const TurmaProf = () => {
                                         <Form.Control type="text" placeholder="Turma" value={turma} onChange={event => setTurma(event.target.value)}/>    
                                         <Form.Control type="text" placeholder="Aluno" value={aluno} onChange={event => setAluno(event.target.value)}/>    
                                         <Form.Control type="text" placeholder="Curso" value={curso} onChange={event => setCurso(event.target.value)}/>  
-                                        <Button style={{margin : "1em"}} variant="primary" type="submit">
-                                            Submit
+                                        <Button style={{margin : "1em"}} variant="primary" type="submit"  onClick={event => editar(event)}>
+                                            Salvar
                                         </Button>  
                                     </Dropdown.Menu>
                                 </Dropdown>
@@ -82,8 +138,8 @@ const TurmaProf = () => {
                                         <Form.Control type="text" placeholder="Turma" value={turma} onChange={event => setTurma(event.target.value)}/>    
                                         <Form.Control type="text" placeholder="Aluno" value={aluno} onChange={event => setAluno(event.target.value)}/>    
                                         <Form.Control type="text" placeholder="Curso" value={curso} onChange={event => setCurso(event.target.value)}/>  
-                                        <Button style={{margin : "1em"}} variant="primary" type="submit">
-                                            Submit
+                                        <Button style={{margin : "1em"}} variant="primary" type="submit" onClick={event => editar(event)}>
+                                            Salvar
                                         </Button>  
                                     </Dropdown.Menu>
                                 </Dropdown>
@@ -106,7 +162,7 @@ const TurmaProf = () => {
                                     additional content. This content is a little bit longer.
                                 </Card.Text>
                                 <div className="botaocentro">
-                                    <Dropdown style={{marginRight : "1rem"}}>
+                                    <Dropdown style={{marginRight : "1rem"}} >
                                         <Dropdown.Toggle variant="warning" id="dropdown-basic">
                                             Editar
                                         </Dropdown.Toggle>
@@ -115,8 +171,8 @@ const TurmaProf = () => {
                                         <Form.Control type="text" placeholder="Turma" value={turma} onChange={event => setTurma(event.target.value)}/>    
                                         <Form.Control type="text" placeholder="Aluno" value={aluno} onChange={event => setAluno(event.target.value)}/>    
                                         <Form.Control type="text" placeholder="Curso" value={curso} onChange={event => setCurso(event.target.value)}/>  
-                                        <Button style={{margin : "1em"}} variant="primary" type="submit">
-                                            Submit
+                                        <Button style={{margin : "1em"}} variant="primary" type="submit" onClick={event => editar(event)}>
+                                            Salvar
                                         </Button>  
                                     </Dropdown.Menu>
                                     </Dropdown>
@@ -145,8 +201,8 @@ const TurmaProf = () => {
                                         <Form.Control type="text" placeholder="Turma" value={turma} onChange={event => setTurma(event.target.value)}/>    
                                         <Form.Control type="text" placeholder="Aluno" value={aluno} onChange={event => setAluno(event.target.value)}/>    
                                         <Form.Control type="text" placeholder="Curso" value={curso} onChange={event => setCurso(event.target.value)}/>  
-                                        <Button style={{margin : "1em"}} variant="primary" type="submit">
-                                            Submit
+                                        <Button style={{margin : "1em"}} variant="primary" type="submit" onClick={event => editar(event)}>
+                                            Salvar
                                         </Button>  
                                         </Dropdown.Menu>
 
@@ -165,5 +221,6 @@ const TurmaProf = () => {
         </div>
     )
 }
+
 
 export default TurmaProf;

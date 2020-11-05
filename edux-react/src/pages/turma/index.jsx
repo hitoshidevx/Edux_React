@@ -1,14 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, Container } from 'react-bootstrap';
 import Menu from '../../components/menu';
 import Titulo from '../../components/titulo';
 import Rodape from '../../components/rodape';
+import { url } from '../../utils/constants';
 import './index.css'
 
 const Turma = () => {
 
-    const listarAlunos = () => {
-        
+    const [aluno, setAluno] = useState([]);
+
+    useEffect(() => {
+
+        listarAluno();
+
+    }, []);
+
+    const listarAluno = () => {
+        fetch(url + 'aluno')
+            .then(response => response.json())
+            .then(data => {
+                setAluno(data)
+                console.log(data);
+            })
+            .catch(err => console.error(err));
     }
 
     return (
