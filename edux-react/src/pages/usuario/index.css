@@ -13,13 +13,12 @@
     border-color: rgb(80, 80, 80);
     color: white;
     background-color: rgb(44, 44, 44);
-    text-decoration: underline;
     font-style: normal;
     margin-bottom: 0.08em;
 }
 .tabelasize{
     margin: auto;
-    max-width: 40rem;
+    max-width: 30rem;
 }
 
 .imagemcenter{

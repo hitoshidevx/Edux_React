@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Container } from 'react-bootstrap';
+import { Card, Container, Table } from 'react-bootstrap';
 import Menu from '../../components/menu';
 import Titulo from '../../components/titulo';
 import Rodape from '../../components/rodape';
@@ -9,6 +9,8 @@ import './index.css'
 const Turma = () => {
 
     const [aluno, setAluno] = useState([]);
+    const [turma, setTurma] = useState([]);
+    const [usuarios, setUsuarios] = useState([]);
 
     useEffect(() => {
 
@@ -17,10 +19,10 @@ const Turma = () => {
     }, []);
 
     const listarAluno = () => {
-        fetch(url + 'aluno')
+        fetch(`${url}usuarios`)
             .then(response => response.json())
             .then(data => {
-                setAluno(data)
+                setUsuarios(data)
                 console.log(data);
             })
             .catch(err => console.error(err));
@@ -38,8 +40,24 @@ const Turma = () => {
                             <Card.Title>Minha Turma</Card.Title>
                             <Card.Title>Alunos</Card.Title>
                             <Card.Text>
-                                This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.
+                                <Table>
+                                    <thead>
+                                        <tr>
+                                            <th>Nome dos Alunos</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {
+                                            usuarios.map((item, index) => {
+                                                return(
+                                                    <tr key={index}>
+                                                        <td>{item.nome}</td>
+                                                    </tr>
+                                                )
+                                            })
+                                        }
+                                    </tbody>
+                                </Table>
                             </Card.Text >
                             </Card.Body>
                             <Card.Footer className="centro">

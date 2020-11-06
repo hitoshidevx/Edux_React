@@ -26,7 +26,7 @@ const CategoriasProf = () => {
         fetch(url + 'categoria')
         .then(response => response.json())
         .then(data => {
-            setCurso(data)
+            setCategoria(data)
             console.log(data);
         })
 

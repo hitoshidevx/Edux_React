@@ -11,14 +11,19 @@ const TurmaProf = () => {
     const [idTurma, setIdTurma] = useState (0);
     const [turma, setTurma] = useState('');
     const [aluno, setAluno] = useState('');
+    const [usuarios, setUsuarios] = useState([]);
+    const [alunoTurma, setAlunoTurma] = useState([]);
+    const [profTurma, setProfTurma] = useState('');   
     const [curso, setCurso] = useState('');
+    const [idurso, setIdCurso] = useState(0);
 
     useEffect(() =>{
-        listar();
+        listarTurma();
+        // listarAluno();
     }, [])
 
-    const listar = () => {
-        fetch(`${url}turmasprof`)
+    const listarTurma = () => {
+        fetch(`${url}turmas`)
             .then(response => response.json())
             .then(data =>{
                 setTurma(data.data);
@@ -27,50 +32,18 @@ const TurmaProf = () => {
             .catch(err => console.error(err))
     }
 
-    const adicionar = (event) => {
+    const cadastrar = (event) => {
         event.PreventDefault();
 
-        fetch(`${url}turmasprof`, {
-            method: 'POST',
-            body: JSON.stringify({
-                turma     : turma,
-                aluno    : aluno,
-                curso    : curso,
-                idTurma : idTurma
-
-            }),
-            headers: {
-                'content-type': 'application/json'
-            }
-            })
-            .then(response => {
-                if (response.ok) {
-                    alert('Turma Cadastrada!')
-                }
-            })
     }
     
     const editar = (event) => {
         event.PreventDefault();
 
-        // fetch(`${url}/turmasprof/${event.target.value}`, {
-        //     method : 'GET'
-        // })
-        // .then(response => response.json())
-        // .then(dado => {
-        //     console.log(dado);
-        //     setIdTurma(dado.data.idTurma);
-        //     setTurma(dado.data.turma);
-        //     setAluno(dado.data.aluno);
-        //     setCurso(dado.data.curso);
-        // })
-
-        
     }
     const remover = (event) => {
         event.PreventDefault();
-
-                
+       
     }
 
     const limparCampos = () => {
@@ -85,7 +58,7 @@ const TurmaProf = () => {
             <Menu />
                 <Titulo titulo="Turma" chamada="Ajuste, adicione ou remova alguma turma"/>
                 <Container>
-                    <Button variant="success" size="lg" onClick={event => adicionar(event)} style={{width : "8rem", marginBottom : "2rem", marginLeft : "2rem"}}>Criar</Button>
+                    <Button variant="success" size="lg" onClick={event => cadastrar(event)} style={{width : "8rem", marginBottom : "2rem", marginLeft : "2rem"}}>Criar</Button>
                     <div style={{margin: "auto"}}>
                         <CardDeck className="textcenter" style={{marginBottom : "25px"}}>
                             <Card>
@@ -94,8 +67,12 @@ const TurmaProf = () => {
                                 <Card.Title>Turma A</Card.Title>
                                 <Card.Title>Alunos</Card.Title>
                                 <Card.Text>
-                                    This is a wider card with supporting text below as a natural lead-in to
-                                    additional content. This content is a little bit longer.
+                                    <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/>    
+                                    <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/>    
+                                    <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/>    
+                                    <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/>    
+                                    <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/>    
+                                    <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/>    
                                 </Card.Text>
                                 <div className="botaocentro">
                                 <Dropdown style={{marginRight : "1rem"}}>
