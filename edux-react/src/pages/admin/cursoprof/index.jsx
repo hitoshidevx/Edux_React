@@ -81,7 +81,7 @@ const CursoProf = () => {
         }
 
         let method = (idCurso === 0 ? 'POST' : 'PUT')
-        let urlRequest = (idCurso === 0 ? `${url}curso` : `${url}curso/${idCurso}`)
+        let urlRequest = (idCurso === 0 ? `${url}Curso` : `${url}Curso/${idCurso}`)
 
         fetch(urlRequest, {
             method: method,
@@ -94,6 +94,7 @@ const CursoProf = () => {
             .then(response => response.json())
             .then(dados => {
                 alert('Curso salvo!');
+
                 listarCursos();
             })
     }
@@ -117,9 +118,10 @@ const CursoProf = () => {
                                 <Form.Label>Título</Form.Label>
                                 <Form.Control type="text" value={titulo} onChange={event => setTitulo(event.target.value)} placeholder="Insira o título" />
                             </Form.Group>
-                            <Form.Group controlId="formBasicPerfil">
+                            <Form.Group controlId="formBasicInstituicao">
                                 <Form.Label>Instituição</Form.Label>
                                 <Form.Control as="select" size="sg" custom defaultValue={idInstituicao} onChange={event => setIdInstituicao(parseInt(event.target.value))}>
+                                    <option value="">Selecione uma instituição...</option>
                                     {
                                         instituicoes.map((item, index) => {
                                             return (
