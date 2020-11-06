@@ -32,6 +32,16 @@ const TurmaProf = () => {
             .catch(err => console.error(err))
     }
 
+    const listarAluno = () => {
+        fetch(`${url}usuarios`)
+            .then(response => response.json())
+            .then(data =>{
+                setAluno(data.data);
+                limparCampos();
+            })
+            .catch(err => console.error(err))
+    }
+
     const cadastrar = (event) => {
         event.PreventDefault();
 
@@ -41,6 +51,35 @@ const TurmaProf = () => {
         event.PreventDefault();
 
     }
+    
+    const salvar = (event) => {
+        event.PreventDefault();
+    
+        const turmas = {
+            turma: turma,
+            curso: curso,
+            usuarios : usuarios
+        }
+
+        let method = (idTurma === 0 ? 'POST' : 'PUT')
+        let urlRequest = (idTurma === 0 ? `${url}Turma` : `${url}Turma/${idTurma}`)
+
+        fetch(urlRequest, {
+            method: method,
+            body: JSON.stringify(turmas),
+            headers: {
+                'content-type': 'application/json',
+                'authorization': 'Bearer ' + localStorage.getItem('token-edux')
+            }
+        })
+            .then(response => response.json())
+            .then(dados => {
+                alert('Curso salvo!');
+
+                listarTurma();
+            })
+    }
+
     const remover = (event) => {
         event.PreventDefault();
        
@@ -66,13 +105,15 @@ const TurmaProf = () => {
                                 <Card.Body>
                                 <Card.Title>Turma A</Card.Title>
                                 <Card.Title>Alunos</Card.Title>
-                                <Card.Text>
-                                    <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/>    
-                                    <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/>    
-                                    <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/>    
-                                    <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/>    
-                                    <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/>    
-                                    <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/>    
+                                <Card.Text onSubmit={event => salvar(event)}>
+                                    <div style={{maxWidth : "25rem", margin : "auto"}}>
+                                        <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/>    
+                                        <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/>    
+                                        <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/>    
+                                        <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/>    
+                                        <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/>    
+                                        <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/> 
+                                    </div>   
                                 </Card.Text>
                                 <div className="botaocentro">
                                 <Dropdown style={{marginRight : "1rem"}}>
@@ -82,9 +123,8 @@ const TurmaProf = () => {
 
                                     <Dropdown.Menu>
                                         <Form.Control type="text" placeholder="Turma" value={turma} onChange={event => setTurma(event.target.value)}/>    
-                                        <Form.Control type="text" placeholder="Aluno" value={aluno} onChange={event => setAluno(event.target.value)}/>    
                                         <Form.Control type="text" placeholder="Curso" value={curso} onChange={event => setCurso(event.target.value)}/>  
-                                        <Button style={{margin : "1em"}} variant="primary" type="submit"  onClick={event => editar(event)}>
+                                        <Button style={{margin : "0.5em"}} variant="primary" type="submit"  onClick={event => editar(event)}>
                                             Salvar
                                         </Button>  
                                     </Dropdown.Menu>
@@ -102,8 +142,14 @@ const TurmaProf = () => {
                                 <Card.Title>Turma B</Card.Title>
                                 <Card.Title>Alunos</Card.Title>
                                 <Card.Text>
-                                    This is a wider card with supporting text below as a natural lead-in to
-                                    additional content. This content is a little bit longer.
+                                    <div style={{maxWidth : "25rem", margin : "auto"}}>
+                                        <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/>    
+                                        <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/>    
+                                        <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/>    
+                                        <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/>    
+                                        <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/>    
+                                        <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/> 
+                                    </div>   
                                 </Card.Text>
                                 <div className="botaocentro">
                                 <Dropdown style={{marginRight : "1rem"}}>
@@ -113,7 +159,6 @@ const TurmaProf = () => {
 
                                     <Dropdown.Menu>
                                         <Form.Control type="text" placeholder="Turma" value={turma} onChange={event => setTurma(event.target.value)}/>    
-                                        <Form.Control type="text" placeholder="Aluno" value={aluno} onChange={event => setAluno(event.target.value)}/>    
                                         <Form.Control type="text" placeholder="Curso" value={curso} onChange={event => setCurso(event.target.value)}/>  
                                         <Button style={{margin : "1em"}} variant="primary" type="submit" onClick={event => editar(event)}>
                                             Salvar
@@ -135,8 +180,14 @@ const TurmaProf = () => {
                                 <Card.Title>Turma C</Card.Title>
                                 <Card.Title>Alunos</Card.Title>
                                 <Card.Text>
-                                    This is a wider card with supporting text below as a natural lead-in to
-                                    additional content. This content is a little bit longer.
+                                    <div style={{maxWidth : "25rem", margin : "auto"}}>
+                                        <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/>    
+                                        <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/>    
+                                        <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/>    
+                                        <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/>    
+                                        <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/>    
+                                        <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/> 
+                                    </div>   
                                 </Card.Text>
                                 <div className="botaocentro">
                                     <Dropdown style={{marginRight : "1rem"}} >
@@ -146,7 +197,6 @@ const TurmaProf = () => {
 
                                         <Dropdown.Menu>
                                         <Form.Control type="text" placeholder="Turma" value={turma} onChange={event => setTurma(event.target.value)}/>    
-                                        <Form.Control type="text" placeholder="Aluno" value={aluno} onChange={event => setAluno(event.target.value)}/>    
                                         <Form.Control type="text" placeholder="Curso" value={curso} onChange={event => setCurso(event.target.value)}/>  
                                         <Button style={{margin : "1em"}} variant="primary" type="submit" onClick={event => editar(event)}>
                                             Salvar
@@ -166,7 +216,14 @@ const TurmaProf = () => {
                                 <Card.Title>{turma}</Card.Title>
                                 <Card.Title>Alunos</Card.Title>
                                 <Card.Text>
-                                    {aluno}
+                                    <div style={{maxWidth : "25rem", margin : "auto"}}>
+                                        <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/>    
+                                        <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/>    
+                                        <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/>    
+                                        <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/>    
+                                        <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/>    
+                                        <Form.Control type="text" placeholder="Aluno" onChange={event => setAluno(event.target.value)}/> 
+                                    </div>   
                                 </Card.Text>
                                 <div className="botaocentro">
                                     <Dropdown style={{marginRight : "1rem"}}>
@@ -176,7 +233,6 @@ const TurmaProf = () => {
 
                                         <Dropdown.Menu>
                                         <Form.Control type="text" placeholder="Turma" value={turma} onChange={event => setTurma(event.target.value)}/>    
-                                        <Form.Control type="text" placeholder="Aluno" value={aluno} onChange={event => setAluno(event.target.value)}/>    
                                         <Form.Control type="text" placeholder="Curso" value={curso} onChange={event => setCurso(event.target.value)}/>  
                                         <Button style={{margin : "1em"}} variant="primary" type="submit" onClick={event => editar(event)}>
                                             Salvar
@@ -184,7 +240,7 @@ const TurmaProf = () => {
                                         </Dropdown.Menu>
 
                                     </Dropdown>
-                                    <Button variant="danger" onClick={event => remover(event)} >Remover</Button>
+                                    <Button variant="danger" onClick={event => remover(event)}>Remover</Button>
                                 </div>
                                 </Card.Body>
                                 <Card.Footer>
