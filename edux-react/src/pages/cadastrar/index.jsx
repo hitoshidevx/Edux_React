@@ -5,43 +5,8 @@ import logo from '../../assets/img/logo.png'
 import { url } from '../../utils/constants';
 import { Form, Container, Button } from 'react-bootstrap'
 import './index.css'
-import jwt_decode from "jwt-decode";
 
 const Cadastrar = () => {
-    
-    const renderForm = () =>{
-
-        const token = localStorage.getItem('token-edux');
-
-        if (token === null){
-
-            return(
-
-                <p>*o usuário será cadastrado como padrão</p>
-
-            )
-
-        } else if (jwt_decode(token).Role === "2" ){
-
-            return(
-
-                <Form.Group controlId="formBasicPerfil">
-                        <Form.Label>Tipo de usuário</Form.Label>
-                        <Form.Control as="select" type="text" placeholder="Informe o tipo de usuário" value={idPerfil} onChange={event => setidPerfil(parseInt(event.target.value))} >
-                            {
-                                perfis.map((item, index) => {
-                                    return(
-                                        <option value={item.idPerfil}>{item.permissao}</option>
-                                    )
-                                })
-                            }
-                    </Form.Control>
-                </Form.Group>
-
-            )
-
-        }
-    }
 
     const [idUsuario, setIdUsuario] = useState('');
     const [nome, setNome] = useState('');
@@ -113,7 +78,18 @@ const Cadastrar = () => {
                         <Form.Control type="password" placeholder="Informe a senha" value={senha} onChange={event => setSenha(event.target.value)}required />
                     </Form.Group>
 
-                    { renderForm() }
+                    <Form.Group controlId="formBasicPerfil">
+                        <Form.Label>Tipo de usuário</Form.Label>
+                        <Form.Control as="select" type="text" placeholder="Informe o tipo de usuário" value={idPerfil} onChange={event => setidPerfil(parseInt(event.target.value))} >
+                            {
+                                perfis.map((item, index) => {
+                                    return(
+                                        <option value={item.idPerfil}>{item.permissao}</option>
+                                    )
+                                })
+                            }
+                        </Form.Control>
+                    </Form.Group>
 
                     <Button variant="primary" type="submit">
                         Enviar
