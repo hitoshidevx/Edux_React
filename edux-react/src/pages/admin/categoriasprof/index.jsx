@@ -46,7 +46,7 @@ const CategoriasProf = () => {
     return(
         <div>
             <Menu />
-            <Container>
+            <Container style={{ marginTop: '4em' }}>
             <Titulo titulo="Categoria" chamada="Cadastre seus alunos em uma categoria" />
 
                 <Button variant="success" size="lg" onClick={event => adicionar(event)} style={{width : "8rem", marginBottom : "2rem", marginLeft : "2rem"}}>Adicionar</Button>
