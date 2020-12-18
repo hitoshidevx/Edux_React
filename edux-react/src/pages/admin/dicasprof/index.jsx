@@ -10,8 +10,9 @@ const DicasProf = () => {
     
     const [idDica, setIdDica] = useState(0);
     const [texto, setTexto] = useState('');
+    const [urlImagem, setUrlImagem] = useState('');
     const [idUsuario, setidUsuario] = useState('');
-    const [imagem, setImagem] = useState({});
+    const [imagem, setImagem] = useState('');
     const [dica, setDica] = useState([]);
 
     useEffect(() => {
@@ -63,8 +64,8 @@ const DicasProf = () => {
 
         const dica = {
             texto : texto,
-            idUsuario : idUsuario,
-            imagem : imagem
+            idUsuario : 1,
+            imagem : urlImagem
         }
 
         let method = (idDica === 0 ? 'POST' : 'PUT');
@@ -100,15 +101,14 @@ const DicasProf = () => {
             method : 'POST',
             body : formdata, 
             headers : {
-                'authorization' : 'Bearer ' + localStorage.getItem('token-edux'),
-                'Accept': 'application/json'
+                'authorization' : 'Bearer ' + localStorage.getItem('token-edux')
             }
 
         })
         .then(response => response.json())
         .then(data => {
             console.log(data)
-            setImagem(data.url);
+            setUrlImagem(data.url);
         })
         .catch(err => console.log(err));  
     }
@@ -130,14 +130,15 @@ const DicasProf = () => {
 
 
                         <Form.File id="fileCategoria" label="Imagem do Post" onChange={event => {uploadFile(event)}} />
-                                { imagem && <img src={imagem} style={{ width : '160px'}} />}
+                                { urlImagem && <img src={urlImagem} style={{ width : '160px'}} />}
 
                         <Button style={{marginTop : '25px'}} type="submit" >Adicionar</Button>
                     </Form>
                     </Card.Body>
                 </Card>
 
-            <Table striped bordered hover className="ajuste" style={{ marginTop : '10px' }}>
+            <Table striped bordered hover classN
+            ame="ajuste" style={{ marginTop : '10px' }}>
                 <thead>
                     <tr>
                     <th>Imagem</th>
